@@ -11,3 +11,4 @@ d = 1000            # agency fee
 k = 1500            # delivery
 
 print("Full coast of the car: ", float("{0:.2f}".format(b + c + d + k)))
+print("Hello")

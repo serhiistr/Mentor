@@ -25,7 +25,7 @@ elif userame == "W.Wright" and password == "thesims":
     print("Как дела, Уилл?")
     security = 3
 elif userame == "guest" or password == "guest":
-    print("Доброго времени суток, Сигеру.")
+    print("Добро пожаловать к нам в гости.")
     security = 1
 else:
     print("Войти в системму не удалось. Должны быть, вы не очень-то эксклюзивный "

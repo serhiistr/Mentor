@@ -24,7 +24,7 @@ elif userame == "S.Miyamoto" and password == "mariobros":
 elif userame == "W.Wright" and password == "thesims":
     print("Как дела, Уилл?")
     security = 3
-elif userame == "guest" and password == "guest":
+elif userame == "guest" or password == "guest":
     print("Доброго времени суток, Сигеру.")
     security = 1
 else:

@@ -11,7 +11,7 @@ if not inventory:
 input("Click Enter to continue.")
 
 # теперь создадим кортеж на экран
-inventory = ("меч" ,
+inventory = ("меч",
             "кольчуга",
             "щит",
             "целебное снадобье")

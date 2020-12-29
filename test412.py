@@ -13,4 +13,13 @@ print("\nИтак, в вашем арсенале: ")
 for item in inventory:
     print(item)
 
-input("\nClick Enter to leave.")
+# найдем длину кортежа
+
+print("\nСейчас в вашем роспоряжении", len(inventory), "предмета/-ов.")
+
+# Проверка на принадлежность кортежу с определенным индексом
+
+index = int(input("\nВведите индекс одного из предметов арсенала: "))
+print("Под индексом ", index, "в арсенале находится", inventory[index])
+
+input("\nClick Enter to continue.")

@@ -25,7 +25,7 @@ jumble = ""
 while word:
     position = random.randrange(len(word))
     jumble += word[position]
-    word1 = word[:position] + word[(position + 1):]
+    word = word[:position] + word[(position + 1):]
 
 # начало игры
 

@@ -12,6 +12,7 @@ WORDS = ("hello", "house", "car")
 # случайным образом выберем из последовательности одно слово
 
 word = random.choice(WORDS)
+correct = word
 
 # псевдокод
 # создать пустую анаграмму
@@ -24,8 +25,10 @@ word = random.choice(WORDS)
 jumble = ""
 while word:
     position = random.randrange(len(word))
-    jumble += word[position]
+    jumble = jumble + word[position]
     word = word[:position] + word[(position + 1):]
+    print(word)
+
 
 # начало игры
 
@@ -39,11 +42,11 @@ print(
 print("Вот анаграмма: ", jumble)
 
 guess = input("\nПопробуйте отгадать исходное слово: ")
-while guess != word and guess != "":
+while guess != correct and guess != " ":
     print("К сожалению, вы неправы.")
     guess = input("Попробуйте отгадать исходное слово: ")
 
-if guess == word:
+if guess == correct:
     print("Да, именно так! Вы отгадали!\n")
 
 print("Спасибо за игру.")

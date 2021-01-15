@@ -9,16 +9,18 @@ c = int(input("введите желаемый интервал, целое чи
 d = 0
 
 if a >= 0 and b >= 0:
-    for i in range(a, b+1, c):
+    for i in range(a, b + 1, c):
         d = d + i
     print("Сумма чисел в заданном интервале: ", d)
 
 elif a < 0 and b >= 0:
-    for i in range(a, b+1, c):
+    for i in range(a, b + 1, c):
         d = d + abs(i)
     print("Сумма чисел в заданном интервале: ", d)
 
-
-
+elif a < 0 and b < 0:
+    for i in range(a, b + 1, c):
+        d = d + abs(i)
+    print("Сумма чисел в заданном интервале: ", d)
 
 input("Click Enter to leave")

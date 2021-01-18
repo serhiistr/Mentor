@@ -1,6 +1,12 @@
-c = 0
-
-for i in range(-1, 3, 1):
-    c = c + abs(i)
+word = input("Enter word: ")
+#
+# c = " "
+#
+# for i in range(len(word), 10):
+#     c = c + word[i]
+#     print(c)
+a = int(len(word))
+print(type(a))
+#
+for i in range(a, 20):
     print(i)
-print(c)

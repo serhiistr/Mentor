@@ -5,16 +5,24 @@ import random
 
 word = input("Введите слово: ")
 
-word_1 = word
-
 new_word = " "
+new_word1 = " "
+b = word
+g = int(len(word))
 
-while word_1:
-    for i in range(-len(word), 0, 1):
-        new_word = new_word + word[i]
-    position = random.randrange(len(word_1))
-    word1 = word_1[:position] + word_1[(position + 1):]
+for i in range(g, 0, -1):
+    # new_word1 = new_word1 + b[i]
+    print(i)
 
-print(new_word)
+# while word:
+    # position = random.randrange(len(word))
+    # new_word = new_word + word[i]
+    # word = word[:position] + word[(position + 1):]
 
+# Второй вариант
+
+# word_2 = word
+#
+# print(word_2[::-1])
+#
 input("Click Enter to leave")

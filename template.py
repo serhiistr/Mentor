@@ -1,12 +1,11 @@
+import random
+
 word = input("Enter word: ")
-#
-# c = " "
-#
-# for i in range(len(word), 10):
-#     c = c + word[i]
-#     print(c)
-a = int(len(word))
-print(type(a))
-#
-for i in range(a, 20):
-    print(i)
+
+new_word = " "
+
+for i in range(3):
+    new_word = new_word + word[i]
+    while word:
+        position = random.randrange(len(word))
+        word = word[:position] + word[(position + 1):]

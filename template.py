@@ -1,11 +1,4 @@
-import random
+word = "TEMP"
 
-word = input("Enter word: ")
-
-new_word = " "
-
-for i in range(3):
-    new_word = new_word + word[i]
-    while word:
-        position = random.randrange(len(word))
-        word = word[:position] + word[(position + 1):]
+for i in range(-1, -len(word)-1, -1):
+    print(word[i])

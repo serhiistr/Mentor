@@ -43,8 +43,12 @@ print("Вот анаграмма: ", jumble)
 
 guess = input("\nПопробуйте отгадать исходное слово: ")
 while guess != correct and guess != " ":
+    if guess == "":
+        # input("Click Enter to leave")
+        break
     print("К сожалению, вы неправы.")
     guess = input("Попробуйте отгадать исходное слово: ")
+
 
 if guess == correct:
     print("Да, именно так! Вы отгадали!\n")

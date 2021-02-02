@@ -8,6 +8,8 @@ import random
 WORDS = ("hello", "house", "car")
 
 word = random.choice(WORDS)
+hint = word
+
 correct = word
 
 jumble = ""
@@ -33,15 +35,22 @@ b = 1
 
 guess = input("\nПопробуйте отгадать исходное слово: ")
 while guess != correct and guess != " ":
+    if guess == "":
+        break
     a = a + 1
     print("К сожалению, вы неправы.")
     if a == 3:
-        print("Я могу дать Вам подсказку, для продолжения игры. Если согласны, введите Yes, если не согласны введите No")
+        print("Я могу дать Вам подсказку для продолжения игры. Если согласны, введите 'да', если не согласны введите 'нет': ")
         c = input()
-        if c == "Yes":
+        if c == "да" and hint == "house":
             print("Я даю вам подсказку. Оно может иметь несколько этажей ")
+        elif c == "да" and hint == "hello":
+            print("Я даю вам подсказку. Когда Вы видите знакомого, вы говорите ему эо слово ")
+        elif c == "да" and hint == "car":
+            print("Я даю вам подсказку. Это средство передвижения ")
         else:
-            print("Игра окончена ", input("Click Enter to leave"))
+            print("Игра окончена ")
+            break
     guess = input("Попробуйте отгадать исходное слово: ")
     b = b + 1
 

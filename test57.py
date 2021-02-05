@@ -13,17 +13,17 @@ while choice != "0":
     """)
     choice = input("You choice: ")
     print()
-    # exit
 
-    if choice == 0:
+    # exit
+    if choice == "0":
         print("Good bay")
 
     # вывод таблицы рекордов
     elif choice == "1":
         print("Рекорды\n")
-        print("Name\tResult")
+        print("Имя\tРезультат")
         for entry in scores:
-            score.name = entry
+            score, name = entry
             print(name, "\t", score)
 
     # add a score
@@ -33,7 +33,7 @@ while choice != "0":
         entry = (score, name)
         scores.append(entry)
         scores.sort(reverse=True)
-        scores = score[:5]          # В списке остается только пять рекордов
+        scores = scores[:5]          # В списке остается только пять рекордов
 
     # непонятный пользовательский ввод
     else:

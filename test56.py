@@ -17,7 +17,7 @@ while choice != "0":
     print()
     # exit
 
-    if choice == 0:
+    if choice == "0":
         print("Good bay")
 
     # вывод лучших результатов на экран
@@ -44,7 +44,7 @@ while choice != "0":
         scores.sort(reverse=True)
 
     # непонятный пользовательский ввод
-    else:
+    elif choice >= "5":
         print("Извините, в меню нет пункта ", choice)
 
 input("Click Enter to leave")

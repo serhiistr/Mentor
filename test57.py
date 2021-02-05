@@ -32,11 +32,12 @@ while choice != "0":
         score = int(input("Впишите его результат: "))
         entry = (score, name)
         scores.append(entry)
-        scores.sort(reverse=True)
+        scores.sort(reverse=True)   # опять используем реверс при сортировке
         scores = scores[:5]          # В списке остается только пять рекордов
 
     # непонятный пользовательский ввод
     else:
         print("Извините, в меню нет пункта ", choice)
 
+print(scores)
 input("Click Enter to leave")

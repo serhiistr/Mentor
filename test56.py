@@ -19,8 +19,8 @@ while choice != "0":
 
     if choice == 0:
         print("Good bay")
-    # вывод лучших результатов на экран
 
+    # вывод лучших результатов на экран
     elif choice == "1":
         print("Рекорды")
         for score in scores:

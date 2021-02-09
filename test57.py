@@ -23,7 +23,9 @@ while choice != "0":
         print("Рекорды\n")
         print("Имя\tРезультат")
         for entry in scores:
-            score, name = entry
+            score, name = entry        # Это множественное присвоение, можно записать следующим образом
+                                       # score = entry[0]
+                                       # name = entry[1].
             print(name, "\t", score)
 
     # add a score

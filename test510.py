@@ -106,11 +106,54 @@ HANGMAN = (
        ----------
        """)
 
-MAX_WRONG = len(HANGMAN) - 1
+MAX_WRONG = len(HANGMAN) - 1            # Константа - максимальное количество дозволеных ошибок
 
 WORDS = ("OVERUSED", "CLAM", "GUAM", "TAFFETA", "PYTHON")
 
 # инициализация переменных
 word = random.choice(WORDS)
 
-so_far = "-" * len(word)
+so_far = "-" * len(word)            # По одному дефису на каждую букву, которую надо отгадать
+wrong = 0                           # Количество ошибок, которые сделал игрок
+used = []                           # буквы, которые игрок уже предлагал
+
+print("Добро пожаловать в игру 'Виселица'. Удачи Вам!")
+
+while wrong < MAX_WRONG and so_far != word:
+    print(HANGMAN[wrong])
+    print("\nВы уже предлагали следующие буквы:\n", used)
+    print("\nОтгаданное вами в слове сейчас выглядит так:\n", so_far)
+
+    guess = input("\n\nВведите букву: ")
+    guess = guess.upper()
+    while guess in used:
+        print("Вы уже предлагали букву ", guess)
+        guess = input("\n\nВведите букву: ")
+        guess = guess.upper()
+    used.append(guess)
+
+    if guess in word:
+        print("\nДА! Буква ", guess, " есь в слове")
+        # Новая строка с отгаданной буквой или буквами
+        new = ""
+        for i in range(len(word)):
+            if guess == word[i]:
+                new += guess
+            else:
+                new += so_far[i]
+        so_far = new
+
+    else:
+        print("\nК сожалению, буквы ", guess, " нет в слове")
+        wrong += 1
+
+if wrong == MAX_WRONG:
+    print(HANGMAN[wrong])
+    print("\nВас повесили")
+
+else:
+    print("\nВы отгадали")
+
+print("\nБыло загадано слово ", word)
+
+input("Click Enter to leave")

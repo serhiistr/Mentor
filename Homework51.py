@@ -17,3 +17,5 @@ while WORD:
 for i in WORD1:
     print(i, end=" ")
 
+input("Click Enter to leave")
+

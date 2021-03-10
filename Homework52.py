@@ -23,6 +23,27 @@ while a != 30:
     agility = int(input("Введите сколько пунктов 'Ловкость' Вы хотите назначить: "))
     a = force + health + wisdom + agility
 
-print("STOP")
+print(f"У игрока {name} следующие характеристики:")
+d = {
+    'force': force,
+    'health': health,
+    'wisdom': wisdom,
+    'agility': agility,
+}
 
-print(force, health, wisdom, agility)
+print(d)
+
+correct = str.upper(input("Хотите ли вы покорректировать свои харакеристики (введите ДА или НЕТ)? "))
+
+if correct == "ДА":
+    correct_1 = input("Введите какие харакеристики вы хотите отредактировать: ")
+    if correct_1 == 'force':
+        force = input("Введите новое значение: ")
+        a = force + health + wisdom + agility
+        while a != 30:
+            print("\nСуммарное количество не равняется 30. Введите заново значение.")
+            force = int(input("\nВведите сколько пунктов 'Сила' Вы хотите назначить: "))
+            a = force + health + wisdom + agility
+        print("stop")
+
+input("Click Enter to leave")

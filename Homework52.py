@@ -33,17 +33,34 @@ d = {
 
 print(d)
 
-correct = str.upper(input("Хотите ли вы покорректировать свои харакеристики (введите ДА или НЕТ)? "))
+correct = str.upper(input("Хотите ли вы покорректировать свои харакеристики (введите Y или N)? "))
 
-if correct == "ДА":
+if correct == "Y":
+
     correct_1 = input("Введите какие харакеристики вы хотите отредактировать: ")
+
     if correct_1 == 'force':
-        force = input("Введите новое значение: ")
-        a = force + health + wisdom + agility
-        while a != 30:
-            print("\nСуммарное количество не равняется 30. Введите заново значение.")
-            force = int(input("\nВведите сколько пунктов 'Сила' Вы хотите назначить: "))
-            a = force + health + wisdom + agility
-        print("stop")
+        new_force = int(input("Введите новые данные: "))
+        d['force'] = new_force
+        print(f"\n\nУ игрока {name} следующие характеристики:")
+        print(d)
+
+    elif correct_1 == 'health':
+        new_health = int(input("Введите новые данные: "))
+        d['health'] = new_health
+        print(f"\n\nУ игрока {name} следующие характеристики:")
+        print(d)
+
+    elif correct_1 == 'wisdom':
+        new_wisdom = int(input("Введите новые данные: "))
+        d['wisdom'] = new_wisdom
+        print(f"\n\nУ игрока {name} следующие характеристики:")
+        print(d)
+
+    elif correct_1 == 'agility':
+        new_agility = int(input("Введите новые данные: "))
+        d['agility'] = new_agility
+        print(f"\n\nУ игрока {name} следующие характеристики:")
+        print(d)
 
 input("Click Enter to leave")

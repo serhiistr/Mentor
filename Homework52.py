@@ -24,7 +24,7 @@ while a != 30:
     a = force + health + wisdom + agility
 
 print(f"У игрока {name} следующие характеристики:")
-d = {
+d = {                               # 'force' - это ключ, force - значение
     'force': force,
     'health': health,
     'wisdom': wisdom,

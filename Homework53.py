@@ -11,11 +11,31 @@ d = {
     'дима': 'Отец Дмитрий',
 }
 
+# some_dictionary = {'some key', 'some_value'}
 
-name = input("\nВведите Ваше имя: ")
+# some_dictionary['some key']
+#
+# 'some_key' in some_dictionary.keys()
+#
+# 'some_value' in some_dictionary.values()
 
-# if name == 'сергей':
-#     print("Вашего отца звали: ", d['сергей'])
+name = 0
 
-for name in d.values():
-    print(name)
+while name != "":
+
+    name = input("\nВведите Ваше имя: ")
+
+    # if name in d.keys():
+    #     print("\nВашего отца звали: ", d[name])
+    if name in d.values():
+        print("\nВашего отца звали: ", d[name])
+
+    # else:
+    #     print("В этой базе данных отсутствуют данные о вашем отце")
+
+
+    # for i in d:
+    #     print(i)
+
+
+input("\n\nClick Enter to leave")

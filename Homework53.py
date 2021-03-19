@@ -21,21 +21,25 @@ d = {
 
 name = 0
 
+print("В программе есть информация об отцах по следующим именам: ")
+
+for i in d:
+    print(i, end=" ")
+
+print("\n\nДля выхода из программы нажмите Enter.")
+
 while name != "":
 
     name = input("\nВведите Ваше имя: ")
 
-    # if name in d.keys():
-    #     print("\nВашего отца звали: ", d[name])
-    if name in d.values():
+    if name in d.keys():
         print("\nВашего отца звали: ", d[name])
 
-    # else:
-    #     print("В этой базе данных отсутствуют данные о вашем отце")
 
 
-    # for i in d:
-    #     print(i)
+    elif name == "":
+        break
+
 
 
 input("\n\nClick Enter to leave")

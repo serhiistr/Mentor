@@ -35,11 +35,19 @@ while name != "":
     if name in d.keys():
         print("\nВашего отца звали: ", d[name])
 
+    else:
+        print("Такого имени нет в моей базе. ")
+        name_new = input("Вы хотите внести в базу пару 'сын-отец?'. Нажмите Д или Н: ")
 
+        if name_new == 'Д':
+            # first_name = input("Введите свое имя: ")
+            father_name = input("Введите имя отца: ")
+            d[name] = father_name
 
-    elif name == "":
-        break
+        if name_new == "Н":
+            break
 
+print(d)
 
 
 input("\n\nClick Enter to leave")

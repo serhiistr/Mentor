@@ -30,8 +30,8 @@ else:
         # first_name = input("Введите свое имя: ")
         father_name = input("Введите имя отца: ")
         d[name] = father_name
-    if name_new == "Н":
-        break
+    # if name_new == "Н":
+    #     break
 
 print(d)
 

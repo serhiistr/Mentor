@@ -11,12 +11,6 @@ d = {
     'дима': 'Отец Дмитрий',
 }
 
-# some_dictionary = {'some key', 'some_value'}
-# some_dictionary['some key']
-# 'some_key' in some_dictionary.keys()
-# 'some_value' in some_dictionary.values()
-
-name = 0
 
 print("В программе есть информация об отцах по следующим именам: ")
 
@@ -25,24 +19,19 @@ for i in d:
 
 print("\n\nДля выхода из программы нажмите Enter.")
 
-while name != "":
+name = input("\nВведите Ваше имя: ")
 
-    name = input("\nВведите Ваше имя: ")
-
-    if name in d.keys():
-        print("\nВашего отца звали: ", d[name])
-
-    else:
-        print("Такого имени нет в моей базе. ")
-        name_new = input("Вы хотите внести в базу пару 'сын-отец?'. Нажмите Д или Н: ")
-
-        if name_new == 'Д':
-            # first_name = input("Введите свое имя: ")
-            father_name = input("Введите имя отца: ")
-            d[name] = father_name
-
-        if name_new == "Н":
-            break
+if name in d.keys():
+    print("\nВашего отца звали: ", d[name])
+else:
+    print("Такого имени нет в моей базе. ")
+    name_new = input("Вы хотите внести в базу пару 'сын-отец?'. Нажмите Д или Н: ")
+    if name_new == 'Д':
+        # first_name = input("Введите свое имя: ")
+        father_name = input("Введите имя отца: ")
+        d[name] = father_name
+    if name_new == "Н":
+        break
 
 print(d)
 

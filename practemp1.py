@@ -5,11 +5,21 @@
 
 
 a, b = map(int, input("Enter two numbers through a space: ").split())
-c = a * b
+с = input("Введите операцию, которую хотите выполнить: ")
 
 
 def arithmetic(a, b, c):
-    return a**2+b**2+c**2
+    if c == "+":
+        return a+b
+    elif c == "-":
+        return a-b
+    elif c == "*":
+        return a*b
+    elif c == "/":
+        return a/b
+    else:
+        return "неизвестна операция"
 
 
 print(arithmetic(a, b, c))
+

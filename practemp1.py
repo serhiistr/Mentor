@@ -5,7 +5,11 @@
 
 
 a, b = map(int, input("Enter two numbers through a space: ").split())
+c = a * b
 
-print(a, b)
 
-# def arithmetic(a, b, c):
+def arithmetic(a, b, c):
+    return a**2+b**2+c**2
+
+
+print(arithmetic(a, b, c))

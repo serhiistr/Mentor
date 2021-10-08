@@ -102,4 +102,41 @@ def winner(board):
     return None
 
 
-def
+def human_move(board, human):
+    """Получает ход человек"""
+    legal = legal_moves(board)
+    move = None
+    while move not in legal:
+        move = ask_number("Твой ход. Выбери одно из полей (0-8):", O, NUM_SQUARES)
+        if move not in legal:
+            print("\nСмешной человек! Это поле уже занято. Выбери другое.\n")
+    print("Ладно...")
+    return move
+
+
+def computer_move(board, computer, human):
+    """Делает ход за компьютерного противника."""
+    # Создадим робочую копию доски, потому что функция будет менять некоторые значения в списке
+    board = board[:]
+
+
+    BEST_MOVES = (4, 0, 2, 6, 8, 1, 3, 5, 7)
+    print("Я выберу поле номер", end=" ")
+
+    for move in legal_moves(board):
+        board[move] = computer
+    # Если следующим ходом может победить компьютер, выберем этот ход
+    if winner(board) == computer:
+        print(move)
+        return move
+    # выполнив проверку, отменим внесенные изменения
+    board[move] = EMPTY
+    # Поскольку следующим ходом ни одна сторона не может победить.
+    # выберем лучшее из доступных полей
+    for move in legal_moves(board):
+        print(move)
+        return move
+
+
+
+

@@ -138,5 +138,48 @@ def computer_move(board, computer, human):
         return move
 
 
+def next_turn(turn):
+    """Осуществляет переход хода."""
+    if turn == X:
+        return O
+    else:
+        return X
 
 
+def congrat_winner(the_winner, computer, human):
+    """Поздравляем победителя игры"""
+    if the_winner != TIE:
+        print("Три", the_winner, "в ряд !\n")
+    else:
+        print("Ничья!\n")
+    if the_winner == computer:
+        print("как я и предсказывал, победа в очередной раз лосталась за мной. \n" 
+              "Вот еще один довод о том, что компьютер превосходит человека")
+    elif the_winner == human:
+        print("О нет, этого не может быть! неужели ты выиграл")
+    elif the_winner == TIE:
+        print("Тебе несказанно повезло дружок. Ничья")
+
+
+def main():
+    display_instruct()
+    computer, human = pieces()
+    turn = X
+    board = new_board()
+    display_board(board)
+    while not winner(board):
+        if turn == human:
+            move = human_move(board, human)
+            board[move] = human
+        else:
+            move = computer_move(board, computer, human)
+            board[move] = computer
+        display_board(board)
+        turn = next_turn(turn)
+    the_winner = winner(board)
+    congrat_winner(the_winner, computer, human)
+
+
+# Запуск программы
+main()
+input("\nClick Enter to leave")

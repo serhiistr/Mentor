@@ -5,9 +5,10 @@
 X = "X"
 O = "O"
 
-EMPTY = ""
+EMPTY = " "
 TIE = "Ничья"
 NUM_SQUARES = 9
+
 
 def display_instruct():
     """Выводит на экран инструкцию для игрока"""
@@ -29,18 +30,18 @@ def display_instruct():
 
 def ask_yes_no(question):
     """Задает вопрос с ответом 'ДА' или 'НЕТ'."""
-    responce = None
-    while responce not in ("y", "n"):
-        responce = input(question).lower()
-    return responce
+    response = None
+    while response not in ("y", "n"):
+        response = input(question).lower()
+    return response
 
 
 def ask_number(question, low, high):
     """Просит ввести число из диапазона."""
-    responce = None
-    while responce not in range(low, high):
-        responce = int(input(question))
-    return responce
+    response = None
+    while response not in range(low, high):
+        response = int(input(question))
+    return response
 
 
 def pieces():
@@ -94,7 +95,7 @@ def winner(board):
                    (0, 4, 8),
                    (2, 4, 6))
     for row in WAYS_TO_WIN:
-        if board[row[0]] == board[row[1]] == board[row[2]] !=EMPTY:
+        if board[row[0]] == board[row[1]] == board[row[2]] != EMPTY:
             winner = board[row[0]]
             return winner
         if EMPTY not in board:
@@ -118,7 +119,6 @@ def computer_move(board, computer, human):
     """Делает ход за компьютерного противника."""
     # Создадим робочую копию доски, потому что функция будет менять некоторые значения в списке
     board = board[:]
-
 
     BEST_MOVES = (4, 0, 2, 6, 8, 1, 3, 5, 7)
     print("Я выберу поле номер", end=" ")
@@ -153,7 +153,7 @@ def congrat_winner(the_winner, computer, human):
     else:
         print("Ничья!\n")
     if the_winner == computer:
-        print("как я и предсказывал, победа в очередной раз лосталась за мной. \n" 
+        print("как я и предсказывал, победа в очередной раз лосталась за мной. \n"
               "Вот еще один довод о том, что компьютер превосходит человека")
     elif the_winner == human:
         print("О нет, этого не может быть! неужели ты выиграл")

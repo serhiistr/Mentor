@@ -38,15 +38,22 @@ NUM_SQUARES = 9
 #
 # display_board(board)
 
+#
+# if 1:
+#     print("TRUE")
+#
+# if 0:
+#     print("FALSE")
+#
+#
+# print("Result: ", 5, 7, ".", sep="", end="")
+# print("Second \" line")
 
-if 1:
-    print("TRUE")
-
-if 0:
-    print("FALSE")
-
-
-print("Result: ", 5, 7, ".", sep="", end="")
-print("Second \" line")
+a = 1
+b = True
+if a:
+    print(a)
+else:
+    print(b)
 
 

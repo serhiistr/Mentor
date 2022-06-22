@@ -9,14 +9,14 @@
 #
 # recursive(1)
 
-print("-------------")
+
 
 
 def recur(x):
-    if x < 4:
+    if x < 3:
         print(x)
         recur(x+1)
         print(x)
-
+    return
 
 recur(1)
